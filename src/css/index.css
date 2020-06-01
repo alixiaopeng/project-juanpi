@@ -1,0 +1,223 @@
+.index-w {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.header-w {
+	width: 980px;
+	margin: 0 auto;
+}
+
+/* 头部 */
+.header {
+	width: 100%;
+	height: 125px;
+	padding-top: 15px;
+	position: relative;
+	border-bottom: 4px solid #ff464e;
+}
+
+.logo {
+	width: 210px;
+	height: 56px;
+	background: url("../img/header-total.gif");
+	background-position: -78px -48px;
+}
+
+.juan-logo {
+	width: 88px;
+	height: 46px;
+	display: block;
+	position: relative;
+}
+
+.protection {
+	background-position: 0 0;
+	width: 465px;
+	height: 33px;
+	background: url("../img/header-total.gif");
+	background-position: 0 0;
+	position: absolute;
+	top: 32px;
+	right: 465px;
+}
+
+.protection a {
+	width: 98px;
+	display: block;
+	float: left;
+	height: 16px;
+	margin: 0 0px 0 34px;
+}
+
+.lowest {
+	width: 85px;
+	margin-left: 75px;
+}
+
+/* search部分 */
+.search {
+	width: 237px;
+	height: 35px;
+	position: absolute;
+	right: 158px;
+	top: 30px;
+}
+
+/* 搜索框 */
+.search-txt {
+	width: 180px;
+	height: 30px;
+	background: #efefef;
+	float: left;
+	padding-left: 10px;
+}
+
+/* 搜索按钮 */
+.search-sbm {
+	width: 37px;
+	height: 30px;
+	float: left;
+	background: url("../img/header-total.gif") no-repeat;
+	background-position: right -65px;
+	cursor: pointer;
+}
+
+/* 主体部分 */
+.main {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #f6f6f6;
+}
+
+/* banner导航左边*/
+.banner-l {
+	width: 200px;
+	height: 380px;
+    float: left;
+    padding-left: 10px;
+}
+
+.banner-l ul li a{
+    display: block;
+    width: 95px;
+    height: 50px;
+    float: left;
+    border-bottom: 1px dashed #ccc;
+    line-height: 50px;
+    text-align: center;
+    color: #5e5e5e;
+}
+
+.banner-l ul li a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+/* 图标 */
+.ct-icon{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    background: url('../img/ct_icons.png') no-repeat 0 0;
+    margin-right: 5px;
+}
+
+.banner-l ul li a:hover .ct-icon:nth-child(1){
+    background-position: 0 -24px;
+}
+
+.banner-l ul li a:hover .ct-icon:nth-child(2){
+    background-position: -24px 24px;
+}
+
+/* banner轮播图 */
+.banner-m {
+	width: 700px;
+	height: 360px;
+	float: left;
+	margin: 20px 20px 0;
+	position: relative;
+}
+
+.banner-m:hover .arrow_prev,
+.banner-m:hover .arrow_next {
+	display: block;
+}
+
+.banner-m img {
+	position: absolute;
+}
+
+/* 轮播图的左右按钮部分 */
+.arrow_prev,
+.arrow_next {
+	width: 29px;
+	color: #fff;
+	display: block;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.2);
+	top: 50%;
+	margin-top: -23px;
+	display: none;
+}
+
+.arrow_next {
+	right: 0;
+}
+
+.arrow_prev i,
+.arrow_next i {
+	width: 13px;
+	height: 21px;
+	cursor: pointer;
+	display: block;
+	margin: 12px 0 0 9px;
+	background: url("https://jp.juancdn.com/juanpi/images/global/arrow.png")
+		no-repeat;
+}
+
+.arrow_next i {
+	background-position: top right;
+}
+
+/* 轮播图的小圆圈按钮部分 */
+.round {
+	width: 200px;
+	height: 18px;
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	bottom: 25px;
+	text-align: center;
+}
+
+.round li {
+	background: #fff;
+	border-radius: 10px;
+	cursor: pointer;
+	display: inline-block;
+	height: 10px;
+	margin-right: 7px;
+	width: 10px;
+}
+
+.current {
+	background: transparent !important;
+	border: 3px solid #fff;
+}
+
+/* banner导航右边 */
+.banner-r {
+	width: 250px;
+	height: 360px;
+	background-color: green;
+	float: left;
+	margin-top: 20px;
+}

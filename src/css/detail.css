@@ -1,0 +1,259 @@
+.header {
+	height: 155px;
+	background-color: pink;
+}
+
+/* 商品信息部分 */
+.good-info {
+    height: 538px;
+    background-color: #fff;
+}
+
+/* wrap部分 */
+.wrap {
+	width: 400px;
+	height: 400px;
+	margin: 70px 0 0 200px;
+	position: relative;
+	float: left;
+}
+
+/* 小图部分 */
+#pic {
+	width: 400px;
+	height: 400px;
+	float: left;
+}
+
+#pic img{
+    width: 400px;
+    height: 400px;
+}
+
+/* 浅黄部分 */
+#sf {
+	width: 200px;
+	height: 200px;
+	background-color: orange;
+	position: absolute;
+	opacity: 0.3;
+	cursor: move;
+	display: none;
+}
+
+/* 大图部分 */
+#bf {
+	width: 500px;
+	height: 400px;
+	position: absolute;
+	left: 400px;
+	display: none;
+	overflow: hidden;
+	z-index: 22;
+}
+
+/* 大图里面的图片 */
+#bf img {
+	width: 750px;
+	height: 750px;
+	position: absolute;
+}
+
+/* 商品图片列表部分 */
+#ulist {
+    position: absolute;
+    left: 0px;
+    top: 410px;
+    width: 402px;
+    height: 56px;
+    overflow: hidden;
+}
+
+#ulist a {
+    float: left;
+    width: 10px;
+    height: 54px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    line-height: 56px;
+    text-align: center;
+    background: #fff;
+}
+
+#list {
+    float: left;
+    margin-left: 18px;
+    width: 372px;
+    position: relative;
+}
+
+.wrap ul {
+    list-style: none;
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.wrap ul li {
+    float: left;
+    width: 56px;
+    height: 56px;
+    padding-right: 6px;
+}
+
+.wrap ul li img {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#right {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #333;
+}
+
+#left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    color: #333;
+}
+
+
+/* 商品处理部分 */
+.deal-wrap {
+	width: 440px;
+	height: 458px;
+	float: left;
+	margin: 70px 0 0 50px;
+}
+
+/* 标题 */
+.deal-wrap h1 {
+	color: #333;
+	font-size: 18px;
+	max-height: 52px;
+	width: 440px;
+	overflow-y: hidden;
+}
+
+/* basic部分 */
+.basic {
+	width: 440px;
+	height: 126px;
+	border-bottom: 1px dotted #e2e2e2;
+}
+
+.d-info {
+	width: 440px;
+	height: 82px;
+	background: #fff0f0;
+	margin: 10px 0 0 0;
+    padding: 8px 0 10px 10px;
+    box-sizing: border-box;
+	position: relative;
+}
+
+.freight {
+	width: 440px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 10px;
+}
+
+/* 颜色尺码部分 */
+.other {
+	width: 440px;
+	height: 100px;
+}
+
+/* 计数部分 */
+.number {
+	width: 200px;
+	height: 30px;
+	margin-top: 10px;
+}
+
+.number .title {
+	width: 48px;
+	border: none;
+	color: #999999;
+	font-size: 12px;
+}
+
+.number span {
+	display: block;
+	width: 24px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	font: bold 18px/26px "微软雅黑";
+	border: 1px solid #e2e2e2;
+	float: left;
+    cursor: pointer;
+}
+
+.inp {
+	width: 50px;
+	height: 26px;
+	background-color: #f6f6f6;
+    float: left;
+    text-align: center;
+    border: 1px solid #e2e2e2;
+}
+
+/* 购买加入购物车部分 */
+.submit-go {
+	width: 100%;
+    height: 40px;
+    margin: 30px 0 0 54px;
+}
+
+.submit-go a {
+	display: block;
+	width: 154px;
+	height: 38px;
+	line-height: 38px;
+	font-family: "微软雅黑", "宋体";
+	float: left;
+	border-radius: 2px;
+	border: 1px solid #ff464e;
+	text-align: center;
+	font-size: 18px;
+}
+
+/* 立即购买按钮 */
+.buy {
+	color: #ff464e;
+	background: #fff0f0;
+}
+
+.buy:hover{
+    background-color: #fff;
+    text-decoration: none;
+}
+
+/* 加入购物车按钮 */
+.add-good {
+	color: #fff;
+    background-color: #eb2424;
+    margin-left: 50px;
+}
+
+.add-good:hover{
+    color: #fff;
+    text-decoration: none;
+    background: #ff464e;
+}
+
+/* 底部 */
+#footer {
+	width: 100%;
+    height: 100px;
+    line-height: 100px;
+}

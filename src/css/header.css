@@ -1,0 +1,51 @@
+.header-w{
+    width: 980px;
+    margin: 0 auto;
+}
+
+.header{
+    width: 100%;
+    height: 61px;
+    /* background-color: pink; */
+    padding-top: 15px;
+    position: relative;
+    border-bottom: 4px solid #ff464e;
+}
+
+.logo{
+    width: 210px;
+    height: 56px;
+    background: url('../img/header-total.gif');
+    background-position: -78px -217px;
+}
+
+.juan-logo{
+    width: 88px;
+    height: 46px;
+    display: block;
+    position: relative;
+}
+
+.protection{
+    background-position: 0 0;
+    width: 465px;
+    height: 33px;
+    background: url('../img/header-total.gif');
+    background-position: 0 0;
+    position: absolute;
+    top: 28px;
+    right: 270px;
+}
+
+.protection a{
+    width: 98px;
+    display: block;
+    float: left;
+    height: 16px;
+    margin: 0 0px 0 34px;
+}
+
+.lowest{
+    width: 85px;
+    margin-left: 75px;
+}
