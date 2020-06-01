@@ -8,7 +8,9 @@ class Index {
 		this.round = $(".round");//小圆圈区域
 		this.roundLi = $(".round li");//小圆圈列表
 		this.currentIndex = 0;//轮播图索引
-		this.rotationTimer = null;//轮播图定时器
+        this.rotationTimer = null;//轮播图定时器
+        this.fixBanner = $('.fix-banner');//底部fix-banner
+        this.close = $('.close');//底部fix-banner关闭按钮
 		this.rotationArr = [
 			"https://goods7.juancdn.com/bao/200529/d/6/5ed0d0fe33b08967721b0b92_700x360.png?iopcmd=convert&Q=88&dst=png",
 			"https://goods7.juancdn.com/bao/200525/d/9/5ecb837933b08978384bd465_700x360.jpg?iopcmd=convert&Q=88&dst=jpg",
@@ -22,7 +24,8 @@ class Index {
 	 */
 	init() {
 		this.getToolbar();
-		this.createRotation();
+        this.createRotation();
+        this.fixBannerHide();
 	}
 
 	/**
@@ -126,5 +129,14 @@ class Index {
 				}, 5000);
 			}
 		);
-	}
+    }
+    
+    /**
+	 * 隐藏底部fix-banner部分
+	 */
+	fixBannerHide(){
+        this.close.on('click',()=>{
+            this.fixBanner.hide();
+        })
+    }
 }

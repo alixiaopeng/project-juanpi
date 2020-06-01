@@ -4,7 +4,7 @@
 }
 
 .header-w {
-	width: 980px;
+	width: 1200px;
 	margin: 0 auto;
 }
 
@@ -83,55 +83,97 @@
 	cursor: pointer;
 }
 
+/* main-nav部分 */
+.main-nav {
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	bottom: -5px;
+	left: 0px;
+}
+
+/* 当前选中的nav */
+.main-nav .current-nav {
+    background-color: #ff464e;
+    border-radius: 5px;
+}
+
+.current-nav a{
+    color: #fff !important;
+
+}
+
+.main-nav ul {
+	width: 484px;
+	height: 38px;
+}
+
+.main-nav ul li {
+	float: left;
+	width: 76px;
+	height: 38px;
+	line-height: 38px;
+    text-align: center;
+}
+
+.main-nav ul li a {
+	font-size: 14px;
+	color: #333333;
+}
+
+.main-nav ul li a:hover {
+	text-decoration: none;
+	color: red;
+}
+
 /* 主体部分 */
 .main {
 	width: 1200px;
 	margin: 0 auto;
 	background-color: #f6f6f6;
+	position: relative;
 }
 
 /* banner导航左边*/
 .banner-l {
 	width: 200px;
 	height: 380px;
-    float: left;
-    padding-left: 10px;
+	float: left;
+	padding-left: 10px;
+	background-color: #fff;
 }
 
-.banner-l ul li a{
-    display: block;
-    width: 95px;
-    height: 50px;
-    float: left;
-    border-bottom: 1px dashed #ccc;
-    line-height: 50px;
-    text-align: center;
-    color: #5e5e5e;
+.banner-l ul li a {
+	display: block;
+	width: 95px;
+	height: 50px;
+	float: left;
+	border-bottom: 1px dashed #ccc;
+	line-height: 50px;
+	text-align: center;
+	color: #5e5e5e;
+	margin-top: 3px;
 }
 
-.banner-l ul li a:hover{
-    color: red;
-    text-decoration: none;
+.banner-l ul li a:hover {
+	color: red;
+	text-decoration: none;
 }
 
 /* 图标 */
-.ct-icon{
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    position: relative;
-    top: -2px;
-    background: url('../img/ct_icons.png') no-repeat 0 0;
-    margin-right: 5px;
+.ct-icon {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+	background: url("../img/ct_icons.png") no-repeat 0 0;
+	margin-right: 5px;
 }
 
-.banner-l ul li a:hover .ct-icon:nth-child(1){
-    background-position: 0 -24px;
-}
-
-.banner-l ul li a:hover .ct-icon:nth-child(2){
-    background-position: -24px 24px;
+.banner-l ul li a:hover .ct-icon:nth-child(1) {
+	background-position-y: -24px !important;
 }
 
 /* banner轮播图 */
@@ -217,7 +259,76 @@
 .banner-r {
 	width: 250px;
 	height: 360px;
-	background-color: green;
 	float: left;
 	margin-top: 20px;
+}
+
+.banner-r img {
+	width: 124px;
+	height: 119px;
+	float: left;
+	border: 1px solid #e8e8e8;
+}
+
+.banner-r .last {
+	width: 250px;
+	height: 120px;
+	border: none;
+}
+
+/* 卷皮客户端二维码 */
+.xcode {
+	position: absolute;
+	top: 0;
+	right: -80px;
+}
+
+/* 底部固定banner部分 */
+.fix-banner {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	z-index: 999999;
+	text-align: center;
+	padding: 10px 0;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.close {
+	position: absolute;
+	right: 0px;
+	top: -20px;
+	width: 50px;
+	height: 50px;
+	background: silver;
+	border-radius: 25px;
+	box-shadow: 2px 2px 5px 0px black;
+	cursor: pointer;
+}
+
+.close:hover {
+	background-color: red;
+}
+
+.close:before {
+	position: absolute;
+	content: "";
+	width: 30px;
+	height: 10px;
+	background: white;
+	transform: rotate(45deg);
+	top: 20px;
+	left: 10px;
+}
+
+.close:after {
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 10px;
+	background: white;
+	transform: rotate(-45deg);
+	top: 20px;
+	left: 10px;
 }
