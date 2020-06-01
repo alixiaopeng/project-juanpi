@@ -14,7 +14,8 @@
 	height: 125px;
 	padding-top: 15px;
 	position: relative;
-	border-bottom: 4px solid #ff464e;
+    border-bottom: 4px solid #ff464e;
+    background-color: #fff;
 }
 
 .logo {
@@ -128,7 +129,8 @@
 
 /* 主体部分 */
 .main {
-	width: 1200px;
+    width: 1200px;
+    height: 380px;
 	margin: 0 auto;
 	background-color: #f6f6f6;
 	position: relative;
@@ -283,8 +285,29 @@
 	right: -80px;
 }
 
-.content{
-    height: 2000px;
+/* 商品列表主体部分 */
+.today{
+    height: 600px;
+}
+
+/* 今日热卖部分 */
+.today-hot{
+    background-color: pink;
+}
+
+/* 今日折扣部分 */
+.today-cut{
+    
+}
+
+/* 今日品牌部分 */
+.today-brand{
+    background-color: orange;
+}
+
+/* 今日新品部分 */
+.today-new{
+    background-color: green;
 }
 
 /* 底部固定banner部分 */
@@ -335,4 +358,32 @@
 	transform: rotate(-45deg);
 	top: 20px;
 	left: 10px;
+}
+
+/* 楼梯导航部分 */
+.stair-nav{
+    width: 56px;
+    height: 298px;
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.stair-list li{
+    width: 58px;
+    height: 60px;
+    font-size: 14px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.stair-list li:hover{
+    color: #fff;
+}
+
+.stair-current{
+    background-color: red;
 }
