@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/suspension.css" />
+		<link rel="stylesheet" href="./css/reset.css" />
+		<title>Document</title>
+	</head>
+	<body style="height: 5000px;">
+		<div class="fix-nav">
+			<div class="nav-w">
+				<ul>
+					<li>
+						<a href="">今日上新</a>
+					</li>
+					<li>
+						<a href="">女装</a>
+					</li>
+					<li>
+						<a href="">男装</a>
+					</li>
+					<li>
+						<a href="">鞋子</a>
+					</li>
+					<li>
+						<a href="">箱包</a>
+					</li>
+					<li>
+						<a href="">母婴</a>
+					</li>
+					<li>
+						<a href="">美妆</a>
+					</li>
+					<li>
+						<a href="">居家</a>
+					</li>
+					<li>
+						<a href="">家纺</a>
+					</li>
+					<li>
+						<a href="">文体</a>
+					</li>
+					<li>
+						<a href="">美食</a>
+					</li>
+					<li>
+						<a href="">数码</a>
+					</li>
+					<li>
+						<a href="">电器</a>
+					</li>
+					<li>
+						<a href="">内衣</a>
+					</li>
+					<li>
+						<a href="">配饰</a>
+					</li>
+					<li>
+						<a href="" class="last">【即将上线】</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+		<script>
+			(function () {
+				class Suspension {
+					constructor() {
+						this.fixNav = $(".fix-nav");
+					}
+					init() {
+						this.suspend();
+					}
+
+					/**
+					 * 顶部悬浮效果
+                     * 当滚轮垂直距离大于等800时，悬浮部分显示
+					 */
+					suspend() {
+						$(window).on("scroll", () => {
+							let topValue = $(window).scrollTop();
+							if (topValue >= 600) {
+								this.fixNav.stop(true).animate({
+									top: 0,
+								});
+							} else {
+								this.fixNav.stop(true).animate({
+									top: -50,
+								});
+							}
+						});
+					}
+				}
+				let suspension = new Suspension();
+				suspension.init();
+			})();
+		</script>
+	</body>
+</html>

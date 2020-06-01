@@ -1,6 +1,7 @@
 class Index {
 	constructor() {
-		this.toolbar = $("#toolbar");
+        this.toolbar = $("#toolbar");
+        this.suspen = $('#suspen');//顶部悬浮部分
 		this.banner = $(".banner-m");//轮播图区域
 		this.bannerImg = $(".banner-list a img");//轮播图图片
 		this.prevBtn = $(".arrow_prev");//左箭头
@@ -23,7 +24,8 @@ class Index {
 	 * 初始化函数
 	 */
 	init() {
-		this.getToolbar();
+        this.getToolbar();
+        this.getSuspension();
         this.createRotation();
         this.fixBannerHide();
 	}
@@ -33,6 +35,13 @@ class Index {
 	 */
 	getToolbar() {
 		this.toolbar.load("toolbar.html");
+    }
+    
+    /**
+	 * 获取公共部分顶部悬浮
+	 */
+	getSuspension() {
+		this.suspen.load("suspension.html");
 	}
 
 	/**

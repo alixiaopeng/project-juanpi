@@ -283,6 +283,10 @@
 	right: -80px;
 }
 
+.content{
+    height: 2000px;
+}
+
 /* 底部固定banner部分 */
 .fix-banner {
 	position: fixed;

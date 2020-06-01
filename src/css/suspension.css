@@ -1,0 +1,31 @@
+.nav-w{
+    width: 1200px;
+    margin: 0 auto;
+}
+/* 顶部悬浮部分 */
+.fix-nav{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    top: -50px;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.fix-nav li{
+    float: left;
+    margin-right: 28px;
+}
+
+.fix-nav a{
+    font-size: 14px;
+}
+
+.fix-nav a:hover{
+    text-decoration: none;
+}
+
+.last{
+    color: #336600;
+}
