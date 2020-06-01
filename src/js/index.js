@@ -1,6 +1,7 @@
 class Index {
 	constructor() {
-		this.toolbar = $("#toolbar");
+        this.toolbar = $("#toolbar");
+        this.footer = $('#footer');
 		this.suspen = $("#suspen"); //顶部悬浮部分
 		this.banner = $(".banner-m"); //轮播图区域
 		this.bannerImg = $(".banner-list a img"); //轮播图图片
@@ -28,7 +29,8 @@ class Index {
 	 * 初始化函数
 	 */
 	init() {
-		this.getToolbar();
+        this.getToolbar();
+        this.getFooter();
 		this.getSuspension();
 		this.createRotation();
 		this.fixBannerHide();
@@ -40,6 +42,13 @@ class Index {
 	 */
 	getToolbar() {
 		this.toolbar.load("toolbar.html");
+    }
+    
+    /**
+	 * 获取公共部分footer
+	 */
+	getFooter() {
+		this.footer.load("footer.html");
 	}
 
 	/**
