@@ -66,8 +66,8 @@ button,
 input,
 select,
 textarea {
-    font-size: 100%;
-    border: none;
+	font-size: 100%;
+	border: none;
 }
 table {
 	border-collapse: collapse;
@@ -99,4 +99,17 @@ a {
 .w {
 	width: 1200px;
 	margin: 0 auto;
+}
+
+/* 清除浮动 */
+.clearfix:after,
+.clearfix:before {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
 }

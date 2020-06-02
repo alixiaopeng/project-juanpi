@@ -1,7 +1,7 @@
 class Index {
 	constructor() {
-        this.toolbar = $("#toolbar");
-        this.footer = $('#footer');
+		this.toolbar = $("#toolbar");
+		this.footer = $("#footer");
 		this.suspen = $("#suspen"); //顶部悬浮部分
 		this.banner = $(".banner-m"); //轮播图区域
 		this.bannerImg = $(".banner-list a img"); //轮播图图片
@@ -23,18 +23,21 @@ class Index {
 			"https://goods5.juancdn.com/bao/200528/9/6/5ecf676733b0896df0119bd5_700x360.jpg?iopcmd=convert&Q=88&dst=jpg",
 			"https://goods5.juancdn.com/bao/200526/9/2/5ecccce4b6f8ea3974065d56_700x360.jpg?iopcmd=convert&Q=88&dst=jpg",
 		]; //存放轮播图图片地址
+		// 今日热卖部分
+		this.hotList = $("#today-hot");
 	}
 
 	/**
 	 * 初始化函数
 	 */
 	init() {
-        this.getToolbar();
-        this.getFooter();
+		this.getToolbar();
+		this.getFooter();
 		this.getSuspension();
 		this.createRotation();
 		this.fixBannerHide();
 		this.stairEffect();
+		this.goodsRender();
 	}
 
 	/**
@@ -42,9 +45,9 @@ class Index {
 	 */
 	getToolbar() {
 		this.toolbar.load("toolbar.html");
-    }
-    
-    /**
+	}
+
+	/**
 	 * 获取公共部分footer
 	 */
 	getFooter() {
@@ -176,7 +179,7 @@ class Index {
 	 * 鼠标滚轮事件
 	 * 楼梯的显示与隐藏
 	 * 当滚轮的垂直距离大于等于300时，楼梯导航栏显示
-     * 当进入对应的主体部分(楼层),楼梯导航栏显示对应的li
+	 * 当进入对应的主体部分(楼层),楼梯导航栏显示对应的li
 	 */
 	scrollEffect() {
 		$(window).on("scroll", () => {
@@ -220,6 +223,50 @@ class Index {
 			$("html,body").animate({
 				scrollTop: Top,
 			});
+		});
+	}
+
+	/**
+	 * 商品列表渲染
+	 */
+	goodsRender() {
+		this.hotListRender();
+	}
+
+	hotListRender() {
+		$.get("http://10.31.162.56/project-juanpi/php/todayhot.php", (data) => {
+			let hotListData = JSON.parse(data);
+			let str = "";
+			for (let i = 0; i < hotListData.length; i++) {
+				let tmpStr = `
+                    <li>
+                        <div class="good-pic">
+                            <a href="#">
+                                <img
+                                    src="${hotListData[i].url}"
+                                    alt="${hotListData[i].title}"
+                                />
+                            </a>
+                        </div>
+                        <div class="good-price">
+                            <span class="price-current">
+                                <em>￥</em>${hotListData[i].newprice}
+                            </span>
+                            <span class="des-other">
+                                <span class="price-old">
+                                    <em>￥</em>${hotListData[i].oldprice}
+                                </span>
+                            </span>
+                        </div>
+                        <div class="good-title">
+                            <a href="#">${hotListData[i].title}</a>
+                            <span class="sold">上新</span>
+                        </div>
+                    </li>
+                `;
+				str += tmpStr;
+			}
+			this.hotList.html(str);
 		});
 	}
 }

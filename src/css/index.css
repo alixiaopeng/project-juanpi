@@ -288,7 +288,8 @@
 
 /* 商品列表主体部分 */
 .today{
-    height: 700px;
+    height: auto;
+    min-height: 600px;
     margin-top: 40px;
     box-sizing: border-box;
     padding: 20px 20px;
@@ -363,26 +364,6 @@
 .sold{
     text-align: right;
     margin-left: 60px;
-}
-
-/* 今日热卖部分 */
-.today-hot{
-    
-}
-
-/* 今日折扣部分 */
-.today-cut{
-    
-}
-
-/* 今日品牌部分 */
-.today-brand{
-    
-}
-
-/* 今日新品部分 */
-.today-new{
-    
 }
 
 /* 底部固定banner部分 */
