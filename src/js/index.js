@@ -24,10 +24,10 @@ class Index {
 			"https://goods5.juancdn.com/bao/200526/9/2/5ecccce4b6f8ea3974065d56_700x360.jpg?iopcmd=convert&Q=88&dst=jpg",
 		]; //存放轮播图图片地址
 		// 商品列表部分
-		this.hotList = $("#today-hot");//今日热卖部分
-		this.cutList = $("#today-cut");//今日折扣部分
-		this.brandList = $("#today-brand");//今日品牌
-		this.newList = $("#today-new");//今日新品
+		this.hotList = $("#today-hot"); //今日热卖部分
+		this.cutList = $("#today-cut"); //今日折扣部分
+		this.brandList = $("#today-brand"); //今日品牌
+		this.newList = $("#today-new"); //今日新品
 	}
 
 	/**
@@ -40,7 +40,7 @@ class Index {
 		this.createRotation();
 		this.fixBannerHide();
 		this.stairEffect();
-		this.ListRender();
+        this.ListRender();
 	}
 
 	/**
@@ -196,7 +196,7 @@ class Index {
 					_this.floorLi.eq(index).addClass("stair-current");
 					return false;
 				}
-			});
+            });
 		});
 	}
 
@@ -229,22 +229,21 @@ class Index {
 		});
 	}
 
-    /**
+	/**
 	 * 商品列表渲染
 	 */
 	ListRender() {
-		$.get('http://10.31.162.56/project-juanpi/php/index-list.php', (data) => {
-			let hotListData = JSON.parse(data);
-			let str = "";
-			for (let i = 0; i < hotListData.length; i++) {
-				let tmpStr = `
+		$.get(
+			"http://10.31.162.56/project-juanpi/php/index-list.php",
+			(data) => {
+				let hotListData = JSON.parse(data);
+				let str = "";
+				for (let i = 0; i < hotListData.length; i++) {
+					let tmpStr = `
                     <li>
                         <div class="good-pic">
                             <a href="#">
-                                <img
-                                    src="${hotListData[i].url}"
-                                    alt="${hotListData[i].title}"
-                                />
+                                <img class="lazy" src="${hotListData[i].url}" width="220" height="220" alt="${hotListData[i].title}"/>
                             </a>
                         </div>
                         <div class="good-price">
@@ -263,12 +262,28 @@ class Index {
                         </div>
                     </li>
                 `;
-				str += tmpStr;
+					str += tmpStr;
+				}
+				this.hotList.html(str);
+				this.cutList.html(str);
+				this.brandList.html(str);
+                this.newList.html(str);
 			}
-			this.hotList.html(str);
-			this.cutList.html(str);
-			this.brandList.html(str);
-			this.newList.html(str);
-		});
+        );
 	}
+
+	/**
+	 * 懒加载
+	 */
+	// lazy(){
+    //     $(window).on('click','img',function() {
+    //         console.log(this)
+    //         let $imgtop = this.offset().top;
+    //         let $scrolltop = $(window).scrollTop();
+    //         let $clientheight = $(window).height();
+    //         if ($imgtop < $scrolltop + $clientheight) {
+    //             $(this).attr('src', $(this).attr('_src'));
+    //         }
+    //     });
+    // }
 }

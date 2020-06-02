@@ -1,7 +1,7 @@
 <?php
 include "conn.php";
 
-$result = $conn->query("select * from todayhot");
+$result = $conn->query("select * from indexgoodlist");
 
 $arrdata = array();
 for ($i = 0; $i < $result->num_rows; $i++) {
