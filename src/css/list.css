@@ -138,6 +138,7 @@
 /* 品牌列表部分 */
 .brand-list{
     width: 1180px;
+    height: auto;
     margin: 20px auto;
 }
 
