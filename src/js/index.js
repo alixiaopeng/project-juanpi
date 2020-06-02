@@ -23,8 +23,11 @@ class Index {
 			"https://goods5.juancdn.com/bao/200528/9/6/5ecf676733b0896df0119bd5_700x360.jpg?iopcmd=convert&Q=88&dst=jpg",
 			"https://goods5.juancdn.com/bao/200526/9/2/5ecccce4b6f8ea3974065d56_700x360.jpg?iopcmd=convert&Q=88&dst=jpg",
 		]; //存放轮播图图片地址
-		// 今日热卖部分
-		this.hotList = $("#today-hot");
+		// 商品列表部分
+		this.hotList = $("#today-hot");//今日热卖部分
+		this.cutList = $("#today-cut");//今日折扣部分
+		this.brandList = $("#today-brand");//今日品牌
+		this.newList = $("#today-new");//今日新品
 	}
 
 	/**
@@ -37,7 +40,7 @@ class Index {
 		this.createRotation();
 		this.fixBannerHide();
 		this.stairEffect();
-		this.goodsRender();
+		this.ListRender();
 	}
 
 	/**
@@ -226,15 +229,11 @@ class Index {
 		});
 	}
 
-	/**
+    /**
 	 * 商品列表渲染
 	 */
-	goodsRender() {
-		this.hotListRender();
-	}
-
-	hotListRender() {
-		$.get("http://10.31.162.56/project-juanpi/php/todayhot.php", (data) => {
+	ListRender() {
+		$.get('http://10.31.162.56/project-juanpi/php/index-list.php', (data) => {
 			let hotListData = JSON.parse(data);
 			let str = "";
 			for (let i = 0; i < hotListData.length; i++) {
@@ -267,6 +266,9 @@ class Index {
 				str += tmpStr;
 			}
 			this.hotList.html(str);
+			this.cutList.html(str);
+			this.brandList.html(str);
+			this.newList.html(str);
 		});
 	}
 }
