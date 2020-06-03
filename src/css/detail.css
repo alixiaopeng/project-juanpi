@@ -1,8 +1,6 @@
-.header {
-	height: 155px;
-	background-color: pink;
+#header .header-w{
+    width: 1200px;
 }
-
 /* 商品信息部分 */
 .good-info {
     height: 538px;

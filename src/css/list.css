@@ -1,12 +1,19 @@
-.header {
+#header {
 	height: 155px;
-	background-color: pink;
+}
+
+#header .header-w{
+    width: 1200px;
+}
+
+body{
+    background-color: #fff !important;
 }
 
 /* 主体部分 */
 .main {
 	width: 1200px;
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 /* 店名部分 */
@@ -149,6 +156,10 @@
     float: left;
     margin: 0 6px 12px 0;
     text-align: center;
+    border: 1px solid #fff;
+}
+
+.goods:hover{
     border: 1px solid #ccc;
 }
 

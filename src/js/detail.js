@@ -1,6 +1,7 @@
 class Detail {
 	constructor() {
 		this.toolbar = $(".toolbar");
+		this.header = $("#header");
 		this.footer = $("#footer");
 		this.goodInfo = $(".good-info"); //整个放大镜部分
 		this.spic = $("#pic"); //小图
@@ -22,7 +23,8 @@ class Detail {
 	 * 初始化函数
 	 */
 	init() {
-		this.getToolbar();
+        this.getToolbar();
+        this.getHeader();
 		this.getFooter();
 		this.spicHover();
 		this.changeImg();
@@ -36,6 +38,13 @@ class Detail {
 	 */
 	getToolbar() {
 		this.toolbar.load("toolbar.html");
+    }
+    
+    /**
+	 * 获取公共部分header
+	 */
+	getHeader() {
+		this.header.load("header.html");
 	}
 
 	/**

@@ -1,6 +1,7 @@
 class List {
 	constructor() {
-		this.toolbar = $(".toolbar");
+        this.toolbar = $(".toolbar");
+        this.header = $("#header");
 		this.footer = $("#footer");
 		this.brandList = $(".brand-list"); //商品列表部分
 	}
@@ -9,7 +10,8 @@ class List {
 	 * 初始化函数
 	 */
 	init() {
-		this.getToolbar();
+        this.getToolbar();
+        this.getHeader();
 		this.getFooter();
 		this.renderGoodList();
 	}
@@ -19,7 +21,15 @@ class List {
 	 */
 	getToolbar() {
 		this.toolbar.load("toolbar.html");
+    }
+    
+    /**
+	 * 获取公共部分header
+	 */
+	getHeader() {
+		this.header.load("header.html");
 	}
+
 
 	/**
 	 * 获取公共部分footer
