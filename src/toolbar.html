@@ -41,14 +41,22 @@
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
 		<script>
 			(function () {
-                let name = localStorage.getItem("username");
-				if (localStorage.getItem("username")) {
-                    $('#fr-login').html('欢迎');
-                    $('#fr-register').html(name);
-				}else{
-                    $('#fr-login').html('登录');
-                    $('#fr-register').html('免费注册');
-                }
+				let login = $("#fr-login");
+				let register = $("#fr-register");
+				let name = localStorage.getItem("username");
+				if (name) {
+					login.html("<span>欢迎</span>");
+					register.html(name);
+					login.on("click", function (event) {
+						event.preventDefault();
+					});
+					register.on("click", function (event) {
+						event.preventDefault();
+					});
+				} else {
+					$("#fr-login").html("登录");
+					$("#fr-register").html("免费注册");
+				}
 			})();
 		</script>
 	</body>
