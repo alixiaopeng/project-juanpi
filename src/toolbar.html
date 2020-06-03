@@ -2,9 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/toolbar.css">
-        <link rel="stylesheet" href="./css/reset.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/toolbar.css" />
+		<link rel="stylesheet" href="./css/reset.css" />
 		<title>Document</title>
 	</head>
 	<body>
@@ -12,7 +12,7 @@
 			<div class="w">
 				<ul class="fr">
 					<li>
-						<a href="login.html">登录</a>
+						<a href="login.html" id="fr-login">登录</a>
 						<a href="register.html" id="fr-register">免费注册</a>
 					</li>
 					<li class="spacer"></li>
@@ -38,5 +38,18 @@
 				</ul>
 			</div>
 		</div>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+		<script>
+			(function () {
+                let name = localStorage.getItem("username");
+				if (localStorage.getItem("username")) {
+                    $('#fr-login').html('欢迎');
+                    $('#fr-register').html(name);
+				}else{
+                    $('#fr-login').html('登录');
+                    $('#fr-register').html('免费注册');
+                }
+			})();
+		</script>
 	</body>
 </html>
