@@ -22,16 +22,16 @@
 				</div>
 				<div class="register-center">
 					<div class="content-landing">
-						<form action="" id="register">
+						<form action="http://10.31.162.56/project-juanpi/php/registry.php" id="register" method="post">
 							<div id="user">
 								<label for="" class="label">账&emsp;&emsp;号:</label>
-                                <input type="text" class="normal-input" />
+                                <input type="text" class="normal-input" name="username"/>
                                 <span class="form-tips-icon"></span>
-                                <p class="form-tips-info">请输入11位手机号</p>
+                                <p class="form-tips-info">请输入账号</p>
 							</div>
 							<div id="password">
 								<label for="" class="label">密&emsp;&emsp;码:</label>
-                                <input type="password" class="normal-input" />
+                                <input type="password" class="normal-input" name="password" />
                                 <span class="form-tips-icon"></span>
                                 <p class="form-tips-info">6-16个数字、字母或符号，字母区分大小写</p>
                             </div>
@@ -54,7 +54,7 @@
 								</span>
 							</div>
 							<div id="btn">
-                                <input type="submit" class="smt-o" value="立即注册">
+                                <input type="submit" class="smt-o" value="立即注册" name="submit">
                             </div>
 						</form>
 					</div>
@@ -74,76 +74,5 @@
 			let register = new Register();
 			register.init();
 		</script>
-		<!-- <script>
-			const user = document.querySelector(".register-fm-account");
-			const password = document.querySelector(".register-fm-password");
-			const tel = document.querySelector(".register-fm-tel");
-			const submit = document.querySelector(".register-fm-sumbit");
-			const form = document.querySelector(".register-form");
-
-			init();
-			function init() {
-				user.addEventListener("blur", userIsEmpty);
-				password.addEventListener("blur", passIsEmpty);
-				tel.addEventListener("blur", telIsEmpty);
-				submit.addEventListener("click", submitHander);
-			}
-
-            //判断账号输入
-			function userIsEmpty(e) {
-				if (this.value != "") {
-					$ajax({
-						type: "post",
-						url: "http://localhost/shopMail/server/register.php",
-						data: {
-							name: user.value,
-						},
-						success: function (data) {
-							if (data) {
-								submit.disabled = true;
-							} else {
-								submit.disabled = false;
-							}
-						},
-					});
-				} else {
-					alert("请输入用户名");
-				}
-			}
-
-            //判断密码框输入
-			function passIsEmpty(e) {
-				if (this.value == "") {
-                    this.style.border = '1px solid red'
-					submit.disabled = true;
-				} else {
-                    this.style.border = '1px solid #A9A9A9'
-					submit.disabled = false;
-				}
-			}
-
-            //判断手机号输入
-			function telIsEmpty(e) {
-				var phone = this.value;
-				if (!/^1[3456789]\d{9}$/.test(phone)) {
-					this.style.border = '1px solid red';
-					submit.disabled = true;
-				} else {
-					this.style.border = '1px solid #A9A9A9'
-					submit.disabled = false;
-				}
-			}
-
-            //提交按钮点击事件,如果用户名、密码、手机号有一个输入为空，则无法跳转
-			function submitHander(e) {
-				if (
-					user.value == "" ||
-					password.value == "" ||
-					tel.value == ""
-				) {
-					e.preventDefault();
-				}
-			}
-		</script> -->
 	</body>
 </html>
