@@ -15,7 +15,7 @@ if (isset($_POST['username'])) {
 //接收前端表单提交的数据
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
-    $password = sha1($_POST['password']);
+    $password = $_POST['password'];
     $conn->query("insert registry values(null,'$username','$password',NOW())");
     header('location:http://10.31.162.56/project-juanpi/src/login.html');
 }
