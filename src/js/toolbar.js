@@ -55,14 +55,16 @@
 
 		/**
 		 * 退出登录状态
-         * 清除localStorage
-         * 页面刷新
+		 * 清除localStorage
+		 * 页面刷新
 		 */
 		signOut() {
 			this.signOutBtn.on("click", function (e) {
-				e.preventDefault();
-				localStorage.removeItem("username");
-				window.location.reload();
+				if (window.confirm("您确定退出登录吗？")) {
+					e.preventDefault();
+					localStorage.removeItem("username");
+					window.location.reload();
+				}
 			});
 		}
 	}

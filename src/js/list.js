@@ -3,7 +3,8 @@ class List {
         this.toolbar = $(".toolbar");
         this.header = $("#header");
 		this.footer = $("#footer");
-		this.brandList = $(".brand-list"); //商品列表部分
+        this.brandList = $(".brand-list"); //商品列表部分
+        this.signOutBtn = $(".sign-out"); //退出按钮
 	}
 
 	/**
@@ -13,7 +14,8 @@ class List {
         this.getToolbar();
         this.getHeader();
 		this.getFooter();
-		this.renderGoodList();
+        this.renderGoodList();
+        this.signOut();
 	}
 
 	/**
@@ -69,6 +71,20 @@ class List {
                 `;
 			}
 			this.brandList.html(str);
+		});
+    }
+    
+    /**
+	 * 退出登录状态
+	 * 清除localStorage
+	 * 页面刷新
+	 */
+	signOut() {
+		this.signOutBtn.on("click", function (e) {
+            console.log(1111)
+			e.preventDefault();
+			localStorage.removeItem("username");
+			window.location.reload();
 		});
 	}
 }

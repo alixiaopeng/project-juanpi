@@ -37,11 +37,6 @@
 	margin-top: 12px;
 }
 
-/* 未登录 */
-.not-login {
-	display: none;
-}
-
 /* 已登录部分 */
 .logined {
 	position: relative;

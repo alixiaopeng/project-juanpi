@@ -28,6 +28,7 @@ class Index {
 		this.cutList = $("#today-cut"); //今日折扣部分
 		this.brandList = $("#today-brand"); //今日品牌
 		this.newList = $("#today-new"); //今日新品
+		this.signOutBtn = $(".sign-out"); //退出按钮
 	}
 
 	/**
@@ -40,7 +41,8 @@ class Index {
 		this.createRotation();
 		this.fixBannerHide();
 		this.stairEffect();
-        this.ListRender();
+		this.ListRender();
+		// this.signOut();
 	}
 
 	/**
@@ -196,7 +198,7 @@ class Index {
 					_this.floorLi.eq(index).addClass("stair-current");
 					return false;
 				}
-            });
+			});
 		});
 	}
 
@@ -267,23 +269,36 @@ class Index {
 				this.hotList.html(str);
 				this.cutList.html(str);
 				this.brandList.html(str);
-                this.newList.html(str);
+				this.newList.html(str);
 			}
-        );
+		);
+	}
+
+	/**
+	 * 退出登录状态
+	 * 清除localStorage
+	 * 页面刷新
+	 */
+	signOut() {
+		this.signOutBtn.on("click", function (e) {
+			e.preventDefault();
+			localStorage.removeItem("username");
+			window.location.reload();
+		});
 	}
 
 	/**
 	 * 懒加载
 	 */
 	// lazy(){
-    //     $(window).on('click','img',function() {
-    //         console.log(this)
-    //         let $imgtop = this.offset().top;
-    //         let $scrolltop = $(window).scrollTop();
-    //         let $clientheight = $(window).height();
-    //         if ($imgtop < $scrolltop + $clientheight) {
-    //             $(this).attr('src', $(this).attr('_src'));
-    //         }
-    //     });
-    // }
+	//     $(window).on('click','img',function() {
+	//         console.log(this)
+	//         let $imgtop = this.offset().top;
+	//         let $scrolltop = $(window).scrollTop();
+	//         let $clientheight = $(window).height();
+	//         if ($imgtop < $scrolltop + $clientheight) {
+	//             $(this).attr('src', $(this).attr('_src'));
+	//         }
+	//     });
+	// }
 }
