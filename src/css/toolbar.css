@@ -12,8 +12,8 @@
 }
 
 .fr li {
-    float: left;
-    margin-right: 17px;
+	float: left;
+	margin-right: 17px;
 }
 
 .fr li a {
@@ -21,9 +21,9 @@
 	color: #333;
 }
 
-.fr li a:hover{
-    text-decoration: none;
-    color: red;
+.fr li a:hover {
+	text-decoration: none;
+	color: red;
 }
 
 #fr-register {
@@ -35,4 +35,49 @@
 	height: 10px;
 	background-color: #ccc;
 	margin-top: 12px;
+}
+
+/* 未登录 */
+.not-login {
+	display: none;
+}
+
+/* 已登录部分 */
+.logined {
+	position: relative;
+}
+
+.tips{
+    width: 78px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    color: red;
+    cursor: pointer;
+}
+
+.list {
+	position: absolute;
+	top: 22px;
+	border: 1px solid #ffa3ba;
+	text-align: center;
+	display: none;
+	border-radius: 5px;
+	z-index: 100;
+	background-color: #fff;
+}
+
+.list h3 {
+	cursor: pointer;
+}
+
+.list a {
+	width: 75px;
+	display: block;
+	color: red !important;
+	border-bottom: 1px solid #ffa3ba;
+}
+
+.list a:hover {
+	background-color: #ffa3ba;
 }

@@ -11,9 +11,25 @@
 		<div class="toolbar">
 			<div class="w">
 				<ul class="fr">
-					<li>
-						<a href="login.html" id="fr-login">登录</a>
-						<a href="register.html" id="fr-register">免费注册</a>
+					<li class="first">
+						<div class="not-login">
+							<a href="login.html" id="fr-login">登录</a>
+							<a href="register.html" id="fr-register"
+								>免费注册</a
+							>
+						</div>
+						<div class="logined">
+							<div class="tips">
+                                <a href="#">欢迎，我有一个梦</a>
+                            </div>
+							<div class="list">
+								<a href="#">我的订单</a>
+								<a href="#">我的收藏</a>
+								<a href="#">我的积分</a>
+								<a href="#">我的优惠卷</a>
+								<a href="#" style="border: none;" class="sign-out">退出</a>
+							</div>
+						</div>
 					</li>
 					<li class="spacer"></li>
 					<li>
@@ -39,25 +55,6 @@
 			</div>
 		</div>
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
-		<script>
-			(function () {
-				let login = $("#fr-login");
-				let register = $("#fr-register");
-				let name = localStorage.getItem("username");
-				if (name) {
-					login.html("<span>欢迎</span>");
-					register.html(name);
-					login.on("click", function (event) {
-						event.preventDefault();
-					});
-					register.on("click", function (event) {
-						event.preventDefault();
-					});
-				} else {
-					$("#fr-login").html("登录");
-					$("#fr-register").html("免费注册");
-				}
-			})();
-		</script>
+		<script src="./js/toolbar.js"></script>
 	</body>
 </html>
