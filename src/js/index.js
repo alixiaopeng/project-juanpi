@@ -254,7 +254,7 @@
                         <li>
                             <div class="good-pic">
                                 <a href="#">
-                                    <img class="lazy" width="220" height="220" data-src="${hotListData[i].url}" alt="${hotListData[i].title}"/>
+                                    <img class="lazy" src="./img/lazy.png" width="220" height="220" data-src="${hotListData[i].url}" alt="${hotListData[i].title}"/>
                                 </a>
                             </div>
                             <div class="good-price">
@@ -290,11 +290,12 @@
 		lazy() {
 			$(window).on("scroll", function () {
 				let lazyImg = $("img.lazy");
-				$.each(lazyImg, function (index, img) {//index:当前图片索引,img:当前图片
+				$.each(lazyImg, function (index, img) {
+					//index:当前图片索引,img:当前图片
 					let imgTopValue = lazyImg.eq(index).offset().top; //图片top值
 					let scrollTop = $(window).scrollTop(); //滚动条的top值
 					let clientHeight = $(window).height(); //可视区的高度
-					if (imgTopValue < scrollTop + clientHeight) {
+					if (imgTopValue < scrollTop + clientHeight - 400) {
 						//图片的top值<可视化高度+滚动条的top值
 						lazyImg.eq(index).attr("src", $(img).attr("data-src"));
 					}
