@@ -120,6 +120,7 @@
                     if (result) {
                         location.href = "index.html";
                         localStorage.setItem('username', _this.userInput.val());
+                        localStorage.setItem('password', _this.passInput.val());
                     } else {
                         alert('用户名或密码错误，请重新输入');
                     }
@@ -130,11 +131,11 @@
 		/**
 		 * 确认框点击事件
 		 */
-		// ckClick() {
-		// 	$(".ck").on("click", () => {
-		// 		this.submitStatus();
-		// 	});
-		// }
+		ckClick() {
+			$(".ck").on("click", () => {
+				
+			});
+		}
 	}
 
 	let login = new Login();
