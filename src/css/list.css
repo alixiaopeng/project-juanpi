@@ -2,18 +2,18 @@
 	height: 155px;
 }
 
-#header .header-w{
-    width: 1200px;
+#header .header-w {
+	width: 1200px;
 }
 
-body{
-    background-color: #fff !important;
+body {
+	background-color: #fff !important;
 }
 
 /* 主体部分 */
 .main {
 	width: 1200px;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 /* 店名部分 */
@@ -44,7 +44,7 @@ body{
 /* 店铺发货 */
 .tip-span {
 	padding: 2px 5px;
-    margin-right: 8px;
+	margin-right: 8px;
 	font-size: 10px;
 	color: #fff;
 	background-color: #ff7700;
@@ -70,8 +70,8 @@ body{
 /* 排序部分 */
 .brand-discount {
 	width: 100%;
-    height: 75px;
-    border-bottom: 1px solid #e3e3e3;
+	height: 75px;
+	border-bottom: 1px solid #e3e3e3;
 }
 
 /* 满件折部分 */
@@ -95,148 +95,174 @@ body{
 /* 排序部分 */
 .sort {
 	width: 1200px;
-    height: 40px;
+	height: 40px;
 }
 
 /* 排序分类 */
 .brand-sort {
-    width: 70%;
-    height: 40px;
-    line-height: 40px;
+	width: 70%;
+	height: 40px;
+	line-height: 40px;
 	color: #6b6b6b;
-    font-size: 12px;
-    padding-left: 20px;
-    box-sizing: border-box;
-    float: left;
+	font-size: 12px;
+	padding-left: 20px;
+	box-sizing: border-box;
+	float: left;
 }
 
 /* 默认排序按钮 */
-#filter .all{
-    border: none;
-    padding-left: 0;
+#filter .all {
+	border: none;
+	padding-left: 0;
 }
 
 /* 所有排序按钮 */
-#filter span{
-    padding: 0 20px;
-    border-left: 1px solid #dbdbdb;
+#filter span {
+	padding: 0 20px;
+	border-left: 1px solid #dbdbdb;
 }
 
 /* 排序时间 */
-.time-sort{
-    width: 30%;
-    height: 40px;
-    line-height: 40px;
-    text-align: right;
-    box-sizing: border-box;
-    padding-right: 15px;
-    float: left;
+.time-sort {
+	width: 30%;
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+	box-sizing: border-box;
+	padding-right: 15px;
+	float: left;
 }
 
 /* 时钟图标 */
-.time-icon{
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    background: url('../img/brand-total.gif') no-repeat;
-    background-position: 0 -26px;
+.time-icon {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: url("../img/brand-total.gif") no-repeat;
+	background-position: 0 -26px;
 }
 
 /* 品牌列表部分 */
-.brand-list{
-    width: 1180px;
-    height: auto;
-    margin: 20px auto;
+.brand-list {
+	width: 1180px;
+	height: auto;
+	margin: 20px auto;
 }
 
 /* 具体的一个商品 */
-.goods{
-    width: 228px;
-    height: 290px;
-    float: left;
-    margin: 0 6px 12px 0;
-    text-align: center;
-    border: 1px solid #fff;
+.goods {
+	width: 228px;
+	height: 290px;
+	float: left;
+	margin: 0 6px 12px 0;
+	text-align: center;
+	border: 1px solid #fff;
 }
 
-.goods:hover{
-    border: 1px solid #ccc;
+.goods:hover {
+	border: 1px solid #ccc;
 }
 
 /* 没有margin-right值得商品 */
-.goods-no-margin-right{
-    margin-right: 0;
+.goods-no-margin-right {
+	margin-right: 0;
 }
 
 /* 商品图片 */
-.goods-pic img{
-    width: 220px;
-    height: 215px;
-    margin-top: 5px;
+.goods-pic img {
+	width: 220px;
+	height: 215px;
+	margin-top: 5px;
 }
 
 /* 商品价格 */
-.good-price{
-    width: 220px;
-    height: 32px;
-    position: relative;
+.good-price {
+	width: 220px;
+	height: 32px;
+	position: relative;
 }
 
 /* 当前价格 */
-.price-current{
-    font-size: 18px;
-    font-family: Arial;
-    color: red;
-    position: absolute;
-    left: 10px;
-    top: 10px;
+.price-current {
+	font-size: 18px;
+	font-family: Arial;
+	color: red;
+	position: absolute;
+	left: 10px;
+	top: 10px;
 }
 
 /* 旧价格 */
-.des-other{
-    color: #bbb;
-    text-decoration: line-through;
-    font-size: 14px;
-    position: absolute;
-    left: 50px;
-    top: 12px;
+.des-other {
+	color: #bbb;
+	text-decoration: line-through;
+	font-size: 14px;
+	position: absolute;
+	left: 50px;
+	top: 12px;
 }
 
 /* 标题部分 */
-.good-title{
-    width: 220px;
-    height: 18px;
-    position: relative;
+.good-title {
+	width: 220px;
+	height: 18px;
+	position: relative;
 }
 
 /* 标题信息 */
-.title-info{
-    font-size: 12px;
-    font-family: Arial;
-    color: #333;
-    position: absolute;
-    left: 14px;
-    top: 10px;
+.title-info {
+	font-size: 12px;
+	font-family: Arial;
+	color: #333;
+	position: absolute;
+	left: 14px;
+	top: 10px;
 }
 
 /* 剩余时间 */
-.title-time{
-    color: #bbb;
-    font-size: 12px;
-    position: absolute;
-    right: 10px;
-    top: 8px;
+.title-time {
+	color: #bbb;
+	font-size: 12px;
+	position: absolute;
+	right: 10px;
+	top: 8px;
 }
 
 /* 分页部分 */
-.page{
-    padding: 0 0 45px;
-    padding-top: 30px;
-    clear: both;
-    overflow: hidden;
-    text-align: center;
+.page {
+    width: 434px;
+    color: #bbb;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    margin-left: 375px;
+    margin-bottom: 20px;
 }
 
-#footer{
-    height: 100px;
+.page a {
+	display: inline-block;
+	width: 38px;
+	height: 38px;
+	line-height: 40px;
+	text-align: center;
+	border-left: 1px solid #ccc;
+	color: #919191;
+    font-size: 14px;
+    float: left;
+}
+
+.page a:hover{
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+}
+
+.active{
+    background-color: red;
+    color: #fff !important;
+}
+
+.page .prev,
+.page .next {
+    width: 90px;
+    border: none;
 }

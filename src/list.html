@@ -4,11 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/list.css" />
+		<link rel="stylesheet" href="./css/pagination.css" />
 		<link rel="stylesheet" href="./css/reset.css" />
 		<title>Document</title>
 	</head>
 	<body>
-        <div class="toolbar"></div>
+		<div class="toolbar"></div>
 		<div id="header"></div>
 		<div class="main">
 			<div class="shop-wrap__store">
@@ -51,28 +52,20 @@
 					</div>
 				</div>
 			</div>
-			<div class="brand-list clearfix"></div>
-			<div class="page">
-				<em></em>
-				<div>
-					<span class="pg-prev">上一页</span><span>1</span
-					><a
-						href="/1876506/2?shop_id=6420229&amp;order=&amp;sort=shop&amp;isstock=0"
-						>2</a
-					><a
-						class="pg-next"
-						href="/1876506/2?shop_id=6420229&amp;order=&amp;sort=shop&amp;isstock=0"
-						>下一页</a
-					>
-				</div>
-			</div>
-        </div>
-        <div id="footer"></div>
+            <div class="brand-list clearfix"></div>
+            <div class="page clearfix">
+                <a href="#" class="prev">上一页</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#" style="border-right: 1px solid #ccc;">6</a>
+                <a href="#" class="next">下一页</a>
+            </div>
+		</div>
+		<div id="footer"></div>
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
 		<script src="./js/list.js"></script>
-		<script>
-			let list = new List();
-			list.init();
-		</script>
 	</body>
 </html>
