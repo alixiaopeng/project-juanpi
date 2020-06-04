@@ -1,0 +1,64 @@
+.footer{
+    width: 100%;
+    height: 185px;
+    border-top: #fc2c3e solid 5px;
+    color: #666;
+    font-family: "SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro", "SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+/* 底部版心 */
+.footer-w{
+    width: 880px;
+    margin: 35px auto;
+}
+
+/* 二维码 */
+.footer-xcode{
+    width: 90px;
+    height: 114px;
+    float: left;
+    background: url('http://jp.juancdn.com/juanpi/images/global/jp-app-90.png?v=20160113') no-repeat;
+    background-position: center top;
+    line-height: 210px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* 获取更新 */
+.footer-nav{
+    width: 92px;
+    height: 114px;
+    float: left;
+    margin-left: 50px;
+}
+
+.footer-nav a{
+    display: block;
+    width: 150px;
+    height: 16px;
+    margin-top: 7px;
+}
+
+/* 联系客服 */
+.contact{
+    width: 160px;
+    height: 54px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.contact a{
+    float: left;
+    height: 45px;
+    width: 86px;
+    margin-right: 10px;
+    background-position: 0 0;
+    background: url('http://jp.juancdn.com/juanpi/images/global/service_add.gif?20160113') no-repeat;
+}
+
+.contact span{
+    display: inline-block;
+    width: 60px;
+    margin-top: 4px;
+}

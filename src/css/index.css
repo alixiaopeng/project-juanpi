@@ -443,9 +443,3 @@
 .stair-current{
     background-color: red;
 }
-
-/* 底部 */
-#footer{
-    height: 200px;
-    line-height: 200px;
-}
