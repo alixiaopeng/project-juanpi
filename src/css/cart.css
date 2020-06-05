@@ -82,7 +82,7 @@
 	width: 220px;
 	height: 128px;
 	float: left;
-	line-height: 0;
+	line-height: 128px;
 	padding-left: 10px;
 	position: relative;
 }
@@ -131,16 +131,6 @@
     margin-top: -12px;
     margin-left: 78px;
     background: url("https://cart.juanpi.com/static/media/delete.91359608.png");
-}
-
-.list-style strong {
-	position: absolute;
-	top: 20px;
-}
-
-.list-style span {
-	position: absolute;
-	top: 60px;
 }
 
 /* 结算部分 */

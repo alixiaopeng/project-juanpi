@@ -279,7 +279,7 @@
 					this.cutList.html(str);
 					this.brandList.html(str);
 					this.newList.html(str);
-					this.lazy();
+					this.lazyLoad();
 				}
 			);
 		}
@@ -287,7 +287,7 @@
 		/**
 		 * 懒加载
 		 */
-		lazy() {
+		lazyLoad() {
 			$(window).on("scroll", function () {
 				let lazyImg = $("img.lazy");
 				$.each(lazyImg, function (index, img) {

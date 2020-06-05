@@ -4,9 +4,8 @@
 			this.header = $("#header");
 			this.footer = $("#footer");
 			this.cart = $(".jgeReN");
-			this.cookieSid = [];
-			this.cookieNum = [];
-			this.goodListArr = [];
+			this.cookieSid = [];//存放商品sid
+			this.cookieNum = [];//存放商品数量
 		}
 
 		init() {
@@ -37,8 +36,6 @@
 		getCookie() {
 			this.cookieSid = $.cookie("cookieSid").split(",");
 			this.cookieNum = $.cookie("cookieNum").split(",");
-			// console.log(this.cookieSid);
-			// console.log(this.cookieNum);
 		}
 
 		/**
@@ -47,6 +44,7 @@
 		getData() {
 			let _this = this;
 			$.each(this.cookieSid, function (index, value) {
+                let _index = index;
 				$.ajax({
 					url: "http://10.31.162.56/project-juanpi/php/getsid.php",
 					data: {
@@ -77,11 +75,11 @@
                                     /
                                     ￥<span>${value.oldprice}</span>
                                 </div>
-                                <div class="num">${_this.cookieNum[index]}</div>
+                                <div class="num">${_this.cookieNum[_index]}</div>
                                 <div class="subtotal">
                                     ￥<span>${
                                         value.newprice *
-                                        _this.cookieNum[index]
+                                        _this.cookieNum[_index]
                                     }</span>
                                 </div>
                                 <div class="operate">

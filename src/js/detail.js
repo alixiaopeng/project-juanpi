@@ -238,7 +238,7 @@ class Detail {
             _this.confirmCookie();
             if ($.inArray(_this.sid, _this.arrSid) != -1) { //sid存在，商品列表存在，数量累加
                 //先取出cookie中存在的数量+当前添加的数量，一起添加到cookie中
-                let num = parseInt(_this.arrNum[$.inArray(_this.sid, _this.arrSid)]) + _this.inp.val();
+                let num = parseInt(_this.arrNum[$.inArray(_this.sid, _this.arrSid)]) + parseInt(_this.inp.val());
                 _this.arrNum[$.inArray(_this.sid, _this.arrSid)] = num;
                 $.cookie('cookieNum', _this.arrNum, { expires: 10, path: '/' });
             } else {
@@ -248,7 +248,7 @@ class Detail {
                 _this.arrNum.push(_this.inp.val()); //将数量放到到arrNum数组中
                 $.cookie('cookieNum', _this.arrNum, { expires: 10, path: '/' });
             }
-            alert('按钮触发了');
+            alert('加入购物车成功');
         });
 	}
 }
