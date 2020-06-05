@@ -62,7 +62,7 @@
 					str += `
                         <div class="goods">
                             <div class="goods-pic">
-                                <a href="detail.html">
+                                <a href="detail.html?sid=${data[i].sid}">
                                     <img src="${data[i].url}" alt="${data[i].title}"/>
                                 </a>
                             </div>
@@ -90,10 +90,10 @@
 			let _this = this;
 			$.each(this.pageBtn, function (index, value) {
 				$(value).on("click", function () {
+                    _this.pageBtn.eq(index).addClass('active').siblings().removeClass('active');
 					_this.page = index + 1;
                     _this.renderGoodList(_this.page);
-                    console.log(_this.page)
-				});
+				});                 
 			});
 		}
 
@@ -107,8 +107,9 @@
 				if ((_this.page < 1)) {
 					_this.page = 1;
 					alert("没有上一页了");
-				}
-				_this.renderGoodList(_this.page);
+                }
+                _this.pageBtn.eq(_this.page-1).addClass('active').siblings().removeClass('active');
+                _this.renderGoodList(_this.page);
 			});
 		}
 
@@ -123,7 +124,8 @@
 				if ((_this.page > _this.pageBtn.length)) {
 					_this.page = _this.pageBtn.length;
 					alert("没有下一页了");
-				}
+                }
+                _this.pageBtn.eq(_this.page-1).addClass('active').siblings().removeClass('active');
 				_this.renderGoodList(_this.page);
 			});
 		}

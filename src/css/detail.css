@@ -5,6 +5,7 @@
 .good-info {
     height: 538px;
     background-color: #fff;
+    padding-bottom: 50px;
 }
 
 /* wrap部分 */
@@ -247,11 +248,4 @@
     color: #fff;
     text-decoration: none;
     background: #ff464e;
-}
-
-/* 底部 */
-#footer {
-	width: 100%;
-    height: 100px;
-    line-height: 100px;
 }

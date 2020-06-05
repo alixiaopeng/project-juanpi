@@ -4,7 +4,8 @@ class Detail {
 		this.header = $("#header");
 		this.footer = $("#footer");
 		this.goodInfo = $(".good-info"); //整个放大镜部分
-		this.spic = $("#pic"); //小图
+		this.spic = $("#pic"); //小图部分
+		this.spicImg = $("#pic img"); //小图部分
 		this.sf = $("#sf"); //浅黄部分
 		this.bf = $("#bf"); //大图部分
 		this.sfImg = $("#pic img");
@@ -16,7 +17,9 @@ class Detail {
 		this.reduceBtn = $(".reduce"); //-按钮
 		this.addBtn = $(".add"); //+按钮
 		this.inp = $(".inp"); //数量输入框
-		this.step = 1;
+        this.step = 1;
+        this.sid = location.search.substring(1).split('=')[1];//获取图片sid
+        this.dealWrapTitle = $('.deal-wrap h1');//商品标题
 	}
 
 	/**
@@ -30,7 +33,9 @@ class Detail {
 		this.changeImg();
 		this.rightBtnClick();
 		this.leftBtnClick();
-		this.changNum();
+        this.changNum();
+        this.getImg();
+        console.log(this.sid)
 	}
 
 	/**
@@ -52,7 +57,27 @@ class Detail {
 	 */
 	getFooter() {
 		this.footer.load("footer.html");
-	}
+    }
+    
+    /**
+	 * 通过sid获取图片
+	 */
+    getImg(){
+        let _this = this;
+        $.ajax({
+            url: 'http://10.31.162.56/project-juanpi/php/getsid.php',
+            data: {
+                sid: this.sid
+            },
+            dataType: 'json'
+        }).done(function(data) {
+            _this.spicImg.attr('src',data.url);
+            _this.spicImg.attr('alt',data.title);
+            _this.bfImg.attr('src',data.url);
+            _this.bfImg.attr('alt',data.title);
+            _this.dealWrapTitle.text(data.title);
+        });
+    }
 
 	/**
 	 * 小图的hover事件
