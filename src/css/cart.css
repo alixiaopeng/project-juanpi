@@ -99,28 +99,7 @@
 .num {
 	width: 70px;
 	float: left;
-	margin-left: -35px;
-}
-
-.num span {
-	height: 20px;
-	width: 20px;
-	line-height: 18px;
-	display: inline-block;
-	text-align: center;
-	font-weight: 700;
-	color: #666666;
-	background: #ffffff;
-	font-size: 14px;
-	cursor: pointer;
-}
-
-.num .num-val {
-	font-size: 12px;
-	color: #999;
-	font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
-		"SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial",
-		sans-serif;
+	margin-left: -10px;
 }
 
 /* 小计部分 */
@@ -130,7 +109,7 @@
     width: 230px;
     height: 128px;
     text-align: center;
-    margin-left: 40px;
+    margin-left: 18px;
 }
 
 /* 操作部分(删除) */
