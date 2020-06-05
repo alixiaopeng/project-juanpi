@@ -11,7 +11,7 @@
 		<title>Document</title>
 	</head>
 	<body>
-        <div class="toolbar"></div>
+        <!-- <div class="toolbar"></div> -->
 		<div id="header"></div>
 		<div class="good-info">
 			<div class="wrap">
@@ -72,13 +72,15 @@
                 <div class="submit-go">
                     <a href="#" class="buy">立即购买</a>
                     <a href="#" class="add-good">加入购物车</a>
+                    <a href="./cart.html">购物车</a>
                 </div>
             </div>
         </div>
         <div id="footer"></div>
-	</body>
-	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
-	<script src="./js/detail.js"></script>
+    </body>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/detail.js"></script>
+    <script src="./lib/jquery.cookie.js"></script>
 	<script>
 		let detail = new Detail();
 		detail.init();
