@@ -111,7 +111,7 @@ body {
 }
 
 /* 默认排序按钮 */
-#filter .all {
+#filter .default {
 	border: none;
 	padding-left: 0;
 }
@@ -119,7 +119,13 @@ body {
 /* 所有排序按钮 */
 #filter span {
 	padding: 0 20px;
-	border-left: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+    cursor: pointer;
+}
+
+/* 选中状态 */
+.sort-active{
+    color: red;
 }
 
 /* 排序时间 */
@@ -198,7 +204,7 @@ body {
 	text-decoration: line-through;
 	font-size: 14px;
 	position: absolute;
-	left: 50px;
+	left: 66px;
 	top: 12px;
 }
 

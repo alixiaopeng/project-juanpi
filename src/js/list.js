@@ -10,6 +10,11 @@
 			this.pageBtn = $(".page a").not(".prev").not(".next"); //页数列表
 			this.prevBtn = $(".prev"); //上一页
 			this.nextBtn = $(".next"); //下一页
+			this.defaultOrder = $(".default"); //默认排序按钮
+			this.ascendOrder = $(".ascending-order"); //升序按钮
+			this.dropOrder = $(".drop-order"); //降序按钮
+			this.goodsList = []; //存放商品的数组
+			this.sortMode = "default";
 		}
 
 		/**
@@ -21,8 +26,9 @@
 			this.getFooter();
 			this.renderGoodList(1);
 			this.changePage();
-            this.prevPage();
-            this.nextPage();
+			this.prevPage();
+			this.nextPage();
+			this.sort();
 		}
 
 		/**
@@ -57,6 +63,11 @@
 				},
 				dataType: "json",
 			}).done((data) => {
+				if (this.sortMode == "ascendSort") {
+					this.ascendSort(data);
+				} else if (this.sortMode == "dropSort") {
+					this.dropSort(data);
+				}
 				let str = "";
 				for (var i = 0; i < data.length; i++) {
 					str += `
@@ -90,10 +101,14 @@
 			let _this = this;
 			$.each(this.pageBtn, function (index, value) {
 				$(value).on("click", function () {
-                    _this.pageBtn.eq(index).addClass('active').siblings().removeClass('active');
+					_this.pageBtn
+						.eq(index)
+						.addClass("active")
+						.siblings()
+						.removeClass("active");
 					_this.page = index + 1;
-                    _this.renderGoodList(_this.page);
-				});                 
+					_this.renderGoodList(_this.page);
+				});
 			});
 		}
 
@@ -103,13 +118,17 @@
 		prevPage() {
 			let _this = this;
 			this.prevBtn.on("click", function () {
-                _this.page--;
-				if ((_this.page < 1)) {
+				_this.page--;
+				if (_this.page < 1) {
 					_this.page = 1;
 					alert("没有上一页了");
-                }
-                _this.pageBtn.eq(_this.page-1).addClass('active').siblings().removeClass('active');
-                _this.renderGoodList(_this.page);
+				}
+				_this.pageBtn
+					.eq(_this.page - 1)
+					.addClass("active")
+					.siblings()
+					.removeClass("active");
+				_this.renderGoodList(_this.page);
 			});
 		}
 
@@ -119,15 +138,79 @@
 		nextPage() {
 			let _this = this;
 			this.nextBtn.on("click", function () {
-                _this.page++;
-                console.log(_this.page);
-				if ((_this.page > _this.pageBtn.length)) {
+				_this.page++;
+				console.log(_this.page);
+				if (_this.page > _this.pageBtn.length) {
 					_this.page = _this.pageBtn.length;
 					alert("没有下一页了");
-                }
-                _this.pageBtn.eq(_this.page-1).addClass('active').siblings().removeClass('active');
+				}
+				_this.pageBtn
+					.eq(_this.page - 1)
+					.addClass("active")
+					.siblings()
+					.removeClass("active");
 				_this.renderGoodList(_this.page);
 			});
+		}
+
+		/**
+		 * 排序功能
+		 */
+		sort() {
+            let _this = this;
+			this.ascendOrder.click(() => {
+				_this.sortMode = "ascendSort";
+                _this.renderGoodList(_this.page);
+                this.ascendOrder.addClass('sort-active').siblings().removeClass('sort-active');
+			});
+			this.dropOrder.click(() => {
+				_this.sortMode = "dropSort";
+                _this.renderGoodList(_this.page);
+                this.dropOrder.addClass('sort-active').siblings().removeClass('sort-active');
+			});
+			this.defaultOrder.click(() => {
+				_this.sortMode = "";
+                _this.renderGoodList(_this.page);
+                this.defaultOrder.addClass('sort-active').siblings().removeClass('sort-active');
+			});
+		}
+
+		/**
+		 * 升序
+		 */
+		ascendSort(arr) {
+			let temp;
+			for (let i = 0; i < arr.length; i++) {
+				for (let j = 0; j < arr.length - i - 1; j++) {
+					if (
+						parseInt(arr[j].newprice) >
+						parseInt(arr[j + 1].newprice)
+					) {
+						temp = arr[j];
+						arr[j] = arr[j + 1];
+						arr[j + 1] = temp;
+					}
+				}
+			}
+		}
+
+		/**
+		 * 降序
+		 */
+		dropSort(arr) {
+			let temp;
+			for (let i = 0; i < arr.length; i++) {
+				for (let j = 0; j < arr.length - i - 1; j++) {
+					if (
+						parseInt(arr[j].newprice) <
+						parseInt(arr[j + 1].newprice)
+					) {
+						temp = arr[j];
+						arr[j] = arr[j + 1];
+						arr[j + 1] = temp;
+					}
+				}
+			}
 		}
 	}
 
