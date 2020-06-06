@@ -220,9 +220,9 @@ class Detail {
 	 * 判断是第几次点击(cookie是否存在)
 	 */
 	confirmCookie() {
-		if ($.cookie("cookieSid") && $.cookie("cookieNum")) {
-			this.arrSid = $.cookie("cookieSid").split(","); //获取cookie 同时转换成数组。[1,2,3,4]
-			this.arrNum = $.cookie("cookieNum").split(","); //获取cookie 同时转换成数组。[12,13,14,15]
+		if (cookie.get("cookieSid") && cookie.get("cookieNum")) {
+			this.arrSid = cookie.get("cookieSid").split(","); //获取cookie 同时转换成数组。[1,2,3,4]
+			this.arrNum = cookie.get("cookieNum").split(","); //获取cookie 同时转换成数组。[12,13,14,15]
 		} else {
 			this.arrSid = [];
 			this.arrNum = [];
@@ -240,13 +240,13 @@ class Detail {
                 //先取出cookie中存在的数量+当前添加的数量，一起添加到cookie中
                 let num = parseInt(_this.arrNum[$.inArray(_this.sid, _this.arrSid)]) + parseInt(_this.inp.val());
                 _this.arrNum[$.inArray(_this.sid, _this.arrSid)] = num;
-                $.cookie('cookieNum', _this.arrNum, { expires: 10, path: '/' });
+                cookie.set('cookieNum', _this.arrNum, 10);
             } else {
                 //第一次点击加入购物车按钮,将商品的sid和商品的数量放到提前准备的数组里面，然后将数组传入cookie.
                 _this.arrSid.push(_this.sid); //将sid放到arrSid数组中
-                $.cookie('cookieSid', _this.arrSid, { expires: 10, path: '/' });
+                cookie.set('cookieSid', _this.arrSid, 10);
                 _this.arrNum.push(_this.inp.val()); //将数量放到到arrNum数组中
-                $.cookie('cookieNum', _this.arrNum, { expires: 10, path: '/' });
+                cookie.set('cookieNum', _this.arrNum, 10);
             }
             alert('加入购物车成功');
         });

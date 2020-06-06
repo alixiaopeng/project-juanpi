@@ -42,14 +42,15 @@
 			this.createRotation();
 			this.fixBannerHide();
 			this.stairEffect();
-			this.ListRender();
+            this.ListRender();
 		}
 
 		/**
 		 * 获取公共部分toolbar
 		 */
 		getToolbar() {
-			this.toolbar.load("toolbar.html");
+            $.ajax({cache: false});
+            this.toolbar.load("toolbar.html");
 		}
 
 		/**

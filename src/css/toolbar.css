@@ -13,7 +13,7 @@
 
 .fr li {
 	float: left;
-	margin-right: 17px;
+	margin-right: 14px;
 }
 
 .fr li a {
@@ -24,6 +24,12 @@
 .fr li a:hover {
 	text-decoration: none;
 	color: red;
+}
+
+.shopping-cart{
+    cursor: pointer;
+    width: 62px;
+    text-align: center;
 }
 
 #fr-register {
@@ -37,9 +43,14 @@
 	margin-top: 12px;
 }
 
+.goods-num{
+    color: red;
+}
+
 /* 已登录部分 */
 .logined {
-	position: relative;
+    position: relative;
+    text-align: center;
 }
 
 .tips{
