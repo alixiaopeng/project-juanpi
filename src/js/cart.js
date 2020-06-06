@@ -5,20 +5,19 @@
 			this.footer = $("#footer");
 			this.cart = $(".jgeReN");
 			this.cookieSid = []; //存放商品sid
-            this.cookieNum = []; //存放商品数量
+			this.cookieNum = []; //存放商品数量
+			this.selectAllCheckbox = $(".select-all"); //全选框
 		}
 
+		/**
+		 * 初始化函数
+		 */
 		init() {
 			this.getHeader();
 			this.getFooter();
 			this.getCookie();
-            this.getData();
-            this.cart.on('click','input',function(e){
-                let target = $(e.target);//当前点击的checkbox
-                let num = target.parent().parent().children().eq(4).text();//获取当前数量
-                let xiaoji = target.parent().parent().children().eq(5).children().text();//获取当前商品的总价格
-                console.log(xiaoji)
-            });
+			this.getData();
+			this.selectAllEvent();
 		}
 
 		/**
@@ -85,9 +84,7 @@
 									_this.cookieNum[_index]
 								}</div>
                                 <div class="subtotal">
-                                    ￥<span>${
-										value.newprice * _this.cookieNum[_index]
-									}</span>
+                                    ${value.newprice * _this.cookieNum[_index]}
                                 </div>
                                 <div class="operate">
                                     <span class="delete"></span>
@@ -96,22 +93,52 @@
                         `;
 						_this.cart.append(str);
 					});
-                });
-            });
+				});
+			});
 		}
 
 		/**
 		 * 计算总价
 		 */
 		// calcPrice() {
-        //     let sum = 0;//商品的件数
-        //     let count = 0;//商品的总价
-        // }
+		//     let sum = 0;//商品的件数
+		//     let count = 0;//商品的总价
+		// }
 
-        /**
-		 * 单选按钮的点击
+		/**
+		 * 全选功能
 		 */
-
+		selectAllEvent() {
+			let _this = this;
+			$(".good-list").on("click", "input", function () {
+				let checkboxList = _this.cart.find(":checkbox"); //单选框集合
+				//点击全选框发生的事件
+				_this.selectAllCheckbox.on("change", function () {
+					let status = _this.selectAllCheckbox.prop("checked"); //当前全选框的checked值
+					checkboxList.prop("checked", status); //单选框列表的checked的值都设置为全选框的值
+					let sum = 0;
+					for (let i = 0; i < checkboxList.length; i++) {
+						let xiaoji = checkboxList
+							.parent()
+							.parent()
+							.children()
+							.eq(5)
+							.html(); //当前商品总价
+						sum += xiaoji;
+					}
+				});
+				//点击单个单选框发生的事件
+				checkboxList.on("click", function () {
+					let checkLength = _this.cart.find("input:checked").length; //单选框选中的长度
+					let length = checkboxList.length; //单选框总长度
+					if (checkLength == length) {
+						_this.selectAllCheckbox.prop("checked", true);
+					} else {
+						_this.selectAllCheckbox.prop("checked", false);
+					}
+				});
+			});
+		}
 	}
 
 	let cart = new Cart();
