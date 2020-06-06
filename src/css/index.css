@@ -429,6 +429,7 @@
     right: 50px;
     border: 1px solid #ccc;
     display: none;
+    background-color: #fff;
 }
 
 .stair-list li{
@@ -440,6 +441,13 @@
     cursor: pointer;
 }
 
+.stair-list li:hover{
+    background-color: #C81623;
+    color: #fff;
+}
+
 .stair-current{
-    background-color: red;
+    background-color: #C81623;
+    color: #fff;
+    font-size: 20px !important;
 }
