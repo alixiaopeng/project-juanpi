@@ -69,14 +69,11 @@
 }
 
 #ulist a {
-    float: left;
-    width: 10px;
-    height: 54px;
+    width: 8px;
+    height: 52px;
     border: 1px solid #ccc;
     text-decoration: none;
-    line-height: 56px;
-    text-align: center;
-    background: #fff;
+    background: url('https://i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png') no-repeat -95px 50%;
 }
 
 #list {
@@ -112,15 +109,14 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    color: #333;
+    background-position: -144px 50% !important;
 }
 
 #left {
     position: absolute;
     left: 0px;
     top: 0px;
-    z-index: 2;
-    color: #333;
+    z-index: 22;
 }
 
 
