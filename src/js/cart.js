@@ -83,9 +83,9 @@
                                 <div class="num">${
 									_this.cookieNum[_index]
 								}</div>
-                                <div class="subtotal">
-                                    ${value.newprice * _this.cookieNum[_index]}
-                                </div>
+                                <div class="subtotal">${
+									value.newprice * _this.cookieNum[_index]
+								}</div>
                                 <div class="operate">
                                     <span class="delete"></span>
                                 </div>
@@ -111,31 +111,55 @@
 		selectAllEvent() {
 			let _this = this;
 			$(".good-list").on("click", "input", function () {
+				let totalPrice = 0; //商品总价
+				let totalNum = 0; //商品总数
 				let checkboxList = _this.cart.find(":checkbox"); //单选框集合
 				//点击全选框发生的事件
 				_this.selectAllCheckbox.on("change", function () {
 					let status = _this.selectAllCheckbox.prop("checked"); //当前全选框的checked值
 					checkboxList.prop("checked", status); //单选框列表的checked的值都设置为全选框的值
-					let sum = 0;
-					for (let i = 0; i < checkboxList.length; i++) {
-						let xiaoji = checkboxList
-							.parent()
-							.parent()
-							.children()
-							.eq(5)
-							.html(); //当前商品总价
-						sum += xiaoji;
+					if (status) {
+						//全选框是选中状态,计算总价和总数量
+						$.each(checkboxList, function (index, ele) {
+							let price = parseInt(
+								$(ele).parent().parent().children().eq(5).text()
+							); //一件商品的总价
+							let num = parseInt(
+								$(ele).parent().parent().children().eq(4).text()
+							); //一件商品购买数量
+							totalPrice += price;
+							totalNum += num;
+						});
 					}
+					$(".total-price").text("￥" + totalPrice);
+					$(".checked").text(totalNum);
 				});
 				//点击单个单选框发生的事件
-				checkboxList.on("click", function () {
+				checkboxList.on("click", function (e) {
+					let priceArr = [];
+					let numArr = [];
 					let checkLength = _this.cart.find("input:checked").length; //单选框选中的长度
 					let length = checkboxList.length; //单选框总长度
 					if (checkLength == length) {
 						_this.selectAllCheckbox.prop("checked", true);
 					} else {
+						//全选状态
 						_this.selectAllCheckbox.prop("checked", false);
 					}
+					$.each(checkboxList, function (index, ele) {
+						if (this.checked) {//单选框选中状态
+							let price = parseInt(
+								$(ele).parent().parent().children().eq(5).text()
+							); //一件商品的总价
+							let num = parseInt(
+								$(ele).parent().parent().children().eq(4).text()
+							); //一件商品购买数量
+							totalPrice += price;
+							totalNum += num;
+						}
+					});
+					$(".total-price").text("￥" + totalPrice);
+					$(".checked").text(totalNum);
 				});
 			});
 		}
