@@ -106,7 +106,7 @@
 					let imgTopValue = lazyImg.eq(index).offset().top; //图片top值
 					let scrollTop = $(window).scrollTop(); //滚动条的top值
 					let clientHeight = $(window).height(); //可视区的高度
-					if (imgTopValue < scrollTop + clientHeight - 300) {
+					if (imgTopValue < scrollTop + clientHeight - 150) {
 						//图片的top值<可视化高度+滚动条的top值
 						lazyImg.eq(index).attr("src", $(img).attr("data-src"));
 					}

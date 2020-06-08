@@ -151,7 +151,8 @@ body {
 /* 品牌列表部分 */
 .brand-list {
 	width: 1180px;
-	height: auto;
+    height: auto;
+    min-height: 400px;
 	margin: 20px auto;
 }
 

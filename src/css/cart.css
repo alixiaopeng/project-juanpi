@@ -45,7 +45,7 @@
 /* 商品列表部分 */
 .good-list {
 	width: 1200px;
-	height: auto;
+    height: auto;
 	background-color: #fff;
 	padding: 20px;
 	box-sizing: border-box;

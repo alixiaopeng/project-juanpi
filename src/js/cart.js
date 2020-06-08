@@ -113,7 +113,7 @@
 			$(".good-list").on("click", "input", function () {
 				let totalPrice = 0; //商品总价
 				let totalNum = 0; //商品总数
-				let checkboxList = _this.cart.find(":checkbox"); //单选框集合
+                let checkboxList = _this.cart.find(":checkbox"); //单选框集合
 				//点击全选框发生的事件
 				_this.selectAllCheckbox.on("change", function () {
 					let status = _this.selectAllCheckbox.prop("checked"); //当前全选框的checked值
