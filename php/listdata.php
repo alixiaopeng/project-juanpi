@@ -1,7 +1,7 @@
 <?php
 include "conn.php";
 
-$pagesize = 10; //单个页面展示的数据条数
+$pagesize = 40; //单个页面展示的数据条数
 $result = $conn->query("select * from allgoodlist");//记录集
 $num = $result->num_rows;//总条数
 $pagenum = ceil($num / $pagesize); //页数

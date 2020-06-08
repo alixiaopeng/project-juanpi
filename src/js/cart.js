@@ -136,8 +136,6 @@
 				});
 				//点击单个单选框发生的事件
 				checkboxList.on("click", function (e) {
-					let priceArr = [];
-					let numArr = [];
 					let checkLength = _this.cart.find("input:checked").length; //单选框选中的长度
 					let length = checkboxList.length; //单选框总长度
 					if (checkLength == length) {

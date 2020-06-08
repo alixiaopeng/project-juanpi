@@ -236,11 +236,11 @@ body {
 
 /* 分页部分 */
 .page {
-    width: 415px;
+    width: 260px;
     color: #bbb;
     border: 1px solid #ccc;
     border-radius: 40px;
-    margin-left: 375px;
+    margin-left: 470px;
     margin-bottom: 20px;
 }
 
