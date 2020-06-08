@@ -48,7 +48,7 @@
 			this.userFormVerification();
 			this.passFormVerification();
 			this.confirmFormVerification();
-			this.ckClick();
+            this.ckClick();
 		}
 
 		/**
@@ -176,7 +176,8 @@
 		submitStatus() {
 			let ckValue = $(".ck").prop("checked");
 			if (this.userFlag && this.passFlag && this.confirmFlag && ckValue) {
-				this.formSubmitBtn.attr("disabled", false);
+                this.formSubmitBtn.attr("disabled", false);
+                this.enterClickHandler();
 			} else {
 				this.formSubmitBtn.attr("disabled", true);
 			}
@@ -188,6 +189,19 @@
 		ckClick() {
 			$(".ck").on("click", () => {
 				this.submitStatus();
+			});
+        }
+        
+        /**
+		 * 键盘enter事件
+         * 点击enter实现注册按钮的点击功能
+		 */
+		enterClickHandler() {
+            let _this = this;
+			$(document).keyup(function (event) {
+				if (event.keyCode == 13) {
+					_this.formSubmitBtn.click();
+				}
 			});
 		}
 	}
