@@ -31,13 +31,15 @@
 						<div id="login">
 							<div id="user">
 								<div class="user_img"></div>
-								<input type="text" class="normal-input" placeholder="手机号/邮箱/昵称" />
-								<div class="dele_info_img"></div>
+								<input type="text" class="normal-input" placeholder="请输入账号" />
+                                <div class="dele_info_img"></div>
+                                <div class="user-tips">账号不能为空</div>
 							</div>
 							<div id="password">
 								<div class="password_img"></div>
-								<input type="password" class="normal-input" placeholder="密码"/>
-								<div class="dele_info_img"></div>
+								<input type="password" class="normal-input" placeholder="请输入密码"/>
+                                <div class="dele_info_img"></div>
+                                <div class="password-tips">密码不能为空</div>
 							</div>
 							<div class="chex">
 								<span>
@@ -45,7 +47,8 @@
 										<input
 											type="checkbox"
 											class="ck"
-											name="auto"
+                                            name="auto"
+                                            checked
 										/>记住账号和密码
 									</label>
 								</span>

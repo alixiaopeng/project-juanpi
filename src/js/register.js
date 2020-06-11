@@ -24,7 +24,8 @@
 		init() {
 			this.getHeader();
 			this.getFooter();
-			this.formVerification();
+            this.formVerification();
+            this.submit();
 		}
 
 		/**
@@ -48,7 +49,8 @@
 			this.userFormVerification();
 			this.passFormVerification();
 			this.confirmFormVerification();
-            this.ckClick();
+            // this.ckClick();
+            this.submit();
 		}
 
 		/**
@@ -67,7 +69,6 @@
 					_this.userTips.css("color", "red");
 					$(this).css("borderColor", "red");
 					_this.userFlag = false;
-					_this.submitStatus();
 				} else {
 					$.ajax({
 						type: "post",
@@ -87,7 +88,7 @@
 							_this.userTips.text("");
 							_this.userInput.css("borderColor", "black");
 							_this.userFlag = true;
-							_this.submitStatus();
+	
 						} else {
 							//账号已存在,提示用户不能注册
 							_this.userIcon.show();
@@ -99,7 +100,7 @@
 							_this.userTips.css("color", "red");
 							_this.userInput.css("borderColor", "red");
 							_this.userFlag = false;
-							_this.submitStatus();
+	
 						}
 					});
 				}
@@ -122,14 +123,12 @@
 					_this.passTips.css("color", "red");
 					$(this).css("borderColor", "red");
 					_this.passFlag = false;
-					_this.submitStatus();
 				} else {
 					_this.passIcon.show();
 					_this.passTips.text("");
 					_this.passIcon.css("backgroundPosition", "-40px -19px");
 					$(this).css("borderColor", "black");
 					_this.passFlag = true;
-					_this.submitStatus();
 				}
 			});
 		}
@@ -150,14 +149,12 @@
 					_this.confirmTips.css("color", "red");
 					$(this).css("borderColor", "red");
 					_this.confirmFlag = false;
-					_this.submitStatus();
 				} else if ($(this).val() == _this.passInput.val()) {
 					_this.confirmIcon.show();
 					_this.confirmTips.text("");
 					_this.confirmIcon.css("backgroundPosition", "-40px -19px");
 					$(this).css("borderColor", "black");
 					_this.confirmFlag = true;
-					_this.submitStatus();
 				} else {
 					_this.confirmIcon.show();
 					_this.confirmIcon.css("backgroundPosition", "0px -19px");
@@ -165,7 +162,6 @@
 					_this.confirmTips.css("color", "red");
 					$(this).css("borderColor", "red");
 					_this.confirmFlag = false;
-					_this.submitStatus();
 				}
 			});
 		}
@@ -173,24 +169,24 @@
 		/**
 		 * 提交按钮的状态(可用和不可用)
 		 */
-		submitStatus() {
-			let ckValue = $(".ck").prop("checked");
-			if (this.userFlag && this.passFlag && this.confirmFlag && ckValue) {
-                this.formSubmitBtn.attr("disabled", false);
-                this.enterClickHandler();
-			} else {
-				this.formSubmitBtn.attr("disabled", true);
-			}
-		}
+		// submitStatus() {
+		// 	let ckValue = $(".ck").prop("checked");
+		// 	if (this.userFlag && this.passFlag && this.confirmFlag && ckValue) {
+        //         this.formSubmitBtn.attr("disabled", false);
+        //         this.enterClickHandler();
+		// 	} else {
+		// 		this.formSubmitBtn.attr("disabled", true);
+		// 	}
+		// }
 
 		/**
 		 * 确认框点击事件
 		 */
-		ckClick() {
-			$(".ck").on("click", () => {
-				this.submitStatus();
-			});
-        }
+		// ckClick() {
+		// 	$(".ck").on("click", () => {
+		// 		this.submitStatus();
+		// 	});
+        // }
         
         /**
 		 * 键盘enter事件
@@ -203,7 +199,41 @@
 					_this.formSubmitBtn.click();
 				}
 			});
-		}
+        }
+        
+        /**
+		 * 表单submit事件
+		 */
+        submit(){
+            let _this = this;
+            $('#register').on('submit',function(){
+                let ckValue = $(".ck").prop("checked");
+                if(!_this.userFlag){
+                    _this.userIcon.show();
+                    _this.userTips.show();
+                    _this.userTips.text("请输入账号");
+                    _this.userTips.css("color", "red");
+                }
+
+                if(!_this.passFlag){
+                    _this.passIcon.show();
+                    _this.passTips.show();
+                    _this.passTips.text("请输入密码");
+                    _this.passTips.css("color", "red");
+                }
+
+                if(!_this.confirmFlag){
+                    _this.confirmIcon.show();
+                    _this.confirmTips.show();
+                    _this.confirmTips.text("请输入密码");
+                    _this.confirmTips.css("color", "red");
+                }
+
+                if(!(_this.userFlag && _this.passFlag && _this.confirmFlag && ckValue)){
+                    return false;
+                }
+            });
+        }
 	}
 	let register = new Register();
 	register.init();

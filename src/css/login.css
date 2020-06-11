@@ -42,15 +42,14 @@
 .other {
 	float: right;
 	font-size: 14px;
-    color: #999;
-    font: 12px/1.5 Tahoma, Helvetica, Arial, "宋体", sans-serif, \5b8b\4f53;
+	color: #999;
+	font: 12px/1.5 Tahoma, Helvetica, Arial, "宋体", sans-serif, \5b8b\4f53;
 }
 
 .other a {
 	color: #0289cd;
 }
 
-/* form部分 */
 .login-center {
 	padding: 30px 80px 0 80px;
 	width: 818px;
@@ -62,19 +61,19 @@
 	width: 370px;
 	height: 348px;
 	float: left;
-    padding-left: 80px;
+	padding-left: 80px;
 }
 
-#login{
-    width: 272px;
+#login {
+	width: 272px;
 }
 
 #user,
 #password {
 	width: 270px;
 	border: 1px solid #666;
-    position: relative;
-    margin-top: 20px;
+	position: relative;
+	margin-top: 20px;
 }
 
 .normal-input {
@@ -106,36 +105,36 @@
 	height: 13px;
 	background: url("https://jp.juancdn.com/user/images/login/de_info.gif")
 		no-repeat;
-    cursor: pointer;
-    display: none;
+	cursor: pointer;
+	display: none;
 }
 
-.chex{
-    width: 280px;
-    margin-top: 20px;
+.chex {
+	width: 280px;
+	margin-top: 20px;
 }
 
-.chex label{
-    font-size: 12px;
-    color: #5e5e5e;
+.chex label {
+	font-size: 12px;
+	color: #5e5e5e;
 }
 
 .forget {
-    float: right;
-    color: #999;
-    font-size: 12px;
+	float: right;
+	color: #999;
+	font-size: 12px;
 }
 
-.smt-o{
-    width: 270px;
-    height: 40px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 2px;
-    border: none;
-    background-color: red;
-    margin-top: 20px;
+.smt-o {
+	width: 270px;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 2px;
+	border: none;
+	background-color: red;
+	margin-top: 20px;
 }
 
 .login-l-img {
@@ -145,6 +144,16 @@
 	text-align: right;
 }
 
-#footer{
-    margin-top: 50px;
+#footer {
+	margin-top: 50px;
+}
+
+/* 提示账号为空 */
+.user-tips,
+.password-tips {
+	position: absolute;
+	right: -80px;
+    top: 10px;
+    color: red;
+    display: none;
 }
