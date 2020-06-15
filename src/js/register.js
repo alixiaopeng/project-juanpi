@@ -65,7 +65,7 @@
 				//输入框为空时
 				if ($(this).val() == "") {
 					_this.userIcon.show();
-					_this.userTips.text("请输入账号");
+					_this.userTips.text("账号不能为空");
 					_this.userTips.css("color", "red");
 					$(this).css("borderColor", "red");
 					_this.userFlag = false;
@@ -119,7 +119,7 @@
 				if ($(this).val() == "") {
 					_this.passIcon.show();
 					_this.passIcon.css("backgroundPosition", "0px -19px");
-					_this.passTips.text("请输入密码");
+					_this.passTips.text("密码不能为空");
 					_this.passTips.css("color", "red");
 					$(this).css("borderColor", "red");
 					_this.passFlag = false;
@@ -145,7 +145,7 @@
 				if ($(this).val() == "") {
 					_this.confirmIcon.show();
 					_this.confirmIcon.css("backgroundPosition", "0px -19px");
-					_this.confirmTips.text("请再次输入密码");
+					_this.confirmTips.text("确认密码不能为空");
 					_this.confirmTips.css("color", "red");
 					$(this).css("borderColor", "red");
 					_this.confirmFlag = false;
@@ -211,21 +211,21 @@
                 if(!_this.userFlag){
                     _this.userIcon.show();
                     _this.userTips.show();
-                    _this.userTips.text("请输入账号");
+                    _this.userTips.text("账号不能为空");
                     _this.userTips.css("color", "red");
                 }
 
                 if(!_this.passFlag){
                     _this.passIcon.show();
                     _this.passTips.show();
-                    _this.passTips.text("请输入密码");
+                    _this.passTips.text("密码不能为空");
                     _this.passTips.css("color", "red");
                 }
 
                 if(!_this.confirmFlag){
                     _this.confirmIcon.show();
                     _this.confirmTips.show();
-                    _this.confirmTips.text("请输入密码");
+                    _this.confirmTips.text("确认密码不能为空");
                     _this.confirmTips.css("color", "red");
                 }
 

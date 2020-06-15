@@ -105,7 +105,7 @@
 		 */
 		selectAllEvent() {
 			let _this = this;
-			_this.cart.on("click", "input", function () {
+			$('.good-list').on("click", "input", function () {
 				let totalPrice = 0; //商品总价
 				let totalNum = 0; //商品总数
 				let checkboxList = _this.cart.find(":checkbox"); //单选框集合
@@ -166,8 +166,8 @@
 		goodsDelete() {
 			let _this = this;
 			let $index = -1; //删除的索引位置
-			let currentSid = 0; //当前元素对应的sid
-			_this.cart.on("click", "span", function () {
+			let currentSid = 0; //当前元素对应的sid 
+			$('.good-list').on("click", "span", function () {
 				let deleteBtn = _this.cart.find(".delete");
 				$.each(deleteBtn, function (index, ele) {
 					$(ele).on("click", function () {
