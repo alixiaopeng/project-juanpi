@@ -30,6 +30,6 @@
   ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/主页.jpg)
 - 登录页面
 
-  ![](https://github.com/alixiaopeng/project-juanpi/blob/master/preview/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.jpg)
+  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/preview/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.jpg)
 
   
