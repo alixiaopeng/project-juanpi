@@ -26,8 +26,16 @@
 # 项目预览
 
 - 主页
-
-  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/preview/2.jpg)
+  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/view/home.jpg)
 - 登录页面
+  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/view/login.jpg)
+- 注册页面
+  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/view/register.jpg)
+- 列表页面
+  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/view/list.jpg)
+- 详情页面
+  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/view/detail.jpg)
+- 购物车页面
+  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/view/cart.jpg)
 
   
