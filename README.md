@@ -27,7 +27,7 @@
 
 - 主页
 
-  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/preview/home.jpg)
+  ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/preview/1.jpg)
 - 登录页面
 
   
