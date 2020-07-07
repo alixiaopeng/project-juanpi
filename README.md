@@ -27,6 +27,6 @@
 
 - 主页
 
-  ![](C:\phpStudy\PHPTutorial\WWW\project-juanpi\preview\主页.jpg)
+  ![](preview\主页.jpg)
 
   
