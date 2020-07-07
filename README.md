@@ -37,5 +37,3 @@
   ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/view/detail.jpg)
 - 购物车页面
   ![image](https://github.com/alixiaopeng/project-juanpi/blob/master/view/cart.jpg)
-
-  
