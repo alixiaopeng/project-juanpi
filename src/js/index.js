@@ -246,7 +246,7 @@
 		 */
 		ListRender() {
 			$.get(
-				"http://10.31.162.56/project-juanpi/php/index-list.php",
+				"http://127.0.0.1/project-juanpi/php/index-list.php",
 				(data) => {
 					let hotListData = JSON.parse(data);
 					let str = "";

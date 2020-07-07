@@ -57,7 +57,7 @@
 		 */
 		renderGoodList(page) {
 			$.ajax({
-				url: "http://10.31.162.56/project-juanpi/php/listdata.php",
+				url: "http://127.0.0.1/project-juanpi/php/listdata.php",
 				data: {
 					page: page,
 				},

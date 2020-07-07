@@ -73,7 +73,7 @@
 					$.ajax({
 						type: "post",
 						url:
-							"http://10.31.162.56/project-juanpi/php/registry.php",
+							"http://127.0.0.1/project-juanpi/php/registry.php",
 						data: {
 							username: $(this).val(),
 						},

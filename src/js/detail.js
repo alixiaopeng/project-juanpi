@@ -69,7 +69,7 @@ class Detail {
 		if (!this.sid) this.sid = 1;
 		let _this = this;
 		$.ajax({
-			url: "http://10.31.162.56/project-juanpi/php/getsid.php",
+			url: "http://127.0.0.1/project-juanpi/php/getsid.php",
 			data: {
 				sid: this.sid,
 			},

@@ -111,7 +111,7 @@
 				if (_this.userFlag && _this.passFlag) {
 					$.ajax({
 						type: "post",
-						url: "http://10.31.162.56/project-juanpi/php/login.php",
+						url: "http://127.0.0.1/project-juanpi/php/login.php",
 						data: {
 							user: _this.userInput.val(),
 							pass: _this.passInput.val(),
